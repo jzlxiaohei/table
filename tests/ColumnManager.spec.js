@@ -1,9 +1,7 @@
-/* eslint-disable no-console,func-names,react/no-multi-comp,indent */
-const React = require('react');
-const expect = require('expect.js');
-const ColumnManager = require('../src/ColumnManager');
-const Column = require('../src/Column');
-const ColumnGroup = require('../src/ColumnGroup');
+import React from 'react';
+import ColumnManager from '../src/ColumnManager';
+import Column from '../src/Column';
+import ColumnGroup from '../src/ColumnGroup';
 
 describe('ColumnManager', () => {
   describe('groupedColumns', () => {
@@ -39,7 +37,7 @@ describe('ColumnManager', () => {
       const columnManager = new ColumnManager(columns);
       const groupedColumns = columnManager.groupedColumns();
 
-      expect(groupedColumns).to.eql([
+      expect(groupedColumns).toEqual([
         { title: '表头A', className: 'title-a', dataIndex: 'a', key: 'a', rowSpan: 4 },
         { title: '表头B', className: 'title-b', dataIndex: 'b', key: 'b', rowSpan: 4 },
         { title: '表头C', className: 'title-c', children:
@@ -97,7 +95,7 @@ describe('ColumnManager', () => {
 
       const columnManager = new ColumnManager(null, elements);
 
-      expect(columnManager.columns).to.eql([
+      expect(columnManager.columns).toEqual([
         {
           title: 'a',
           children: [
